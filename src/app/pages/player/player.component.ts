@@ -20,7 +20,7 @@ export class PlayerComponent {
   files: Array<any> = [
   ];
 
-  private state: StreamState = {
+  state: StreamState = {
     playing: false,
     readableCurrentTime: '',
     readableDuration: '',
@@ -29,7 +29,7 @@ export class PlayerComponent {
     canplay: false,
     error: false
   };
-  
+
   currentFile: any = {};
 
   constructor(
@@ -90,7 +90,7 @@ export class PlayerComponent {
     return this.currentFile.index === this.files.length - 1;
   }
 
-  onSliderChangeEnd(change: { value: number; }) {
+  onSliderChangeEnd(change: { value: any; }) {
     this.audioService.seekTo(change.value);
   }
 
